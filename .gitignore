@@ -37,3 +37,5 @@ install/win32/meta.py
 /credr-odoo/
 /logs/
 /node_modules/
+
+/odoo_celery/celeryconfig.py

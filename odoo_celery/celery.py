@@ -5,6 +5,7 @@ from odoo.modules.registry import RegistryManager
 from odoo.api import Environment
 from odoo import modules
 import odoo
+from odoo_celery.celeryconfig import conf_file
 
 
 app = Celery('credr-odoo')
@@ -21,7 +22,7 @@ app.conf.task_queues = CELERY_QUEUES
 app.conf.timezone = 'Asia/Kolkata'
 
 # Set is and env variable
-odoo.tools.config.parse_config(['-c', '/Users/cliffton/PycharmProjects/myrepo/credr-odoo/config/odoorc-cliff'])
+odoo.tools.config.parse_config(['-c', conf_file])
 mods = modules.get_modules()
 modules.initialize_sys_path()
 
