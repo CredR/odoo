@@ -583,6 +583,13 @@ var FormView = View.extend(common.FieldManagerMixin, {
      */
     to_view_mode: function() {
         this._actualize_mode("view");
+        try{
+            $('.btn-mark-sold').prop('disabled',false);
+            $('.btn-dishonour').prop('disabled',false);
+        }
+        catch(e){
+            console.log('Button not found!')
+        }
         this.trigger('to_view_mode');
     },
     /**
@@ -592,6 +599,14 @@ var FormView = View.extend(common.FieldManagerMixin, {
     to_edit_mode: function() {
         this.onchanges_mutex = new utils.Mutex();
         this._actualize_mode("edit");
+        try{
+            $('.btn-mark-sold').prop('disabled',true);
+            $('.btn-dishonour').prop('disabled',true);
+        }
+        catch(e){
+            console.log('Button not found!')
+        }
+        
         this.trigger('to_edit_mode');
     },
     /**
