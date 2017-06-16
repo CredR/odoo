@@ -602,6 +602,7 @@ var FormView = View.extend(common.FieldManagerMixin, {
         try{
             $('.btn-mark-sold').prop('disabled',true);
             $('.btn-dishonour').prop('disabled',true);
+            $('.o_list_record_delete').remove();
         }
         catch(e){
             console.log('Button not found!')
