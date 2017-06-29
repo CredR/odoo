@@ -27,7 +27,8 @@ mods = modules.get_modules()
 modules.initialize_sys_path()
 
 install_apps = [
-    'c2b_crm'
+    'c2b_crm',
+    'campaign_lead'
 ]
 
 installed_mods = []
